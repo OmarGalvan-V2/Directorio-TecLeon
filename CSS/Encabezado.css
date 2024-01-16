@@ -1,0 +1,167 @@
+* {
+	margin: 0;
+	/*Establece el espacio entre los bordes externos
+    de un elemento y de elementos adyacentes*/
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Times New Roman", Times, serif;
+}
+
+.header {
+	background-color: #1b396a;
+	/*Altura de un bloque de contenido*/
+	height: 80px;
+	position: fixed; /*Fijamos la posicion de nuestro header*/
+	width: 100%; /*Ancho*/
+	top: 0;
+	left: 0;
+}
+
+.nav-menu {
+	/*Flex controla direccion, tama;o y alineamiento dentro
+    de nuestro contenedor*/
+	display: flex;
+
+	/*Space-Between distribuye los elementos dentro del contenedor de manera 
+    uniforme a lo largo del eje principal (horizontal)
+    y deja espacio entre ellos*/
+	justify-content: space-between;
+
+	max-width: 1240px;
+	margin: 0 auto;
+	flex-direction: row;
+}
+
+#imag {
+	max-width: 100px;
+	max-height: 80px;
+}
+
+.nav-link {
+	color: white;
+	text-decoration: none;
+	padding: 0.1rem 1rem;
+}
+
+.ul-menu {
+	display: flex;
+	list-style: none;
+	margin-right: 30px;
+}
+
+.item-menu {
+	font-size: 15px;
+	margin: 0 10px;
+	line-height: 80px;
+	/*Pone todo texto de minuscula a  mayuscula*/
+	text-transform: uppercase;
+	/*max-content establece el ancho del elemento  y
+    se ajuste automáticamente al tamaño máximo 
+    posible de su contenido.*/
+	width: max-content;
+}
+
+.menu-link {
+	border-radius: 3px;
+}
+
+.menu-link:hover {
+	transition: 0.5s;
+	color: rgb(14, 38, 77);
+}
+
+/*Responsive es una barra de navegación que se adapta y se ajusta
+automáticamente al tamaño de la pantalla del dispositivo
+ en el que se está viendo el sitio web.*/
+.nav-toggle {
+	color: whitesmoke;
+	background: none;
+	border: none;
+	font-size: 20px;
+	padding: 0 20px;
+	line-height: 60px;
+	/**/
+	display: none;
+}
+
+/*@media en CSS se utiliza para definir diferentes estilos 
+de presentación para diferentes tamaños de pantalla y dispositivos.*/
+
+@media (max-width: 768px) {
+	.header {
+		background-color: #1b396a;
+		/*Altura de un bloque de contenido*/
+		height: 60px;
+		position: fixed; /*Fijamos la posicion de nuestro header*/
+		width: 100%; /*Ancho*/
+		top: 0;
+		left: 0;
+	}
+
+	.LogoEmpresa {
+		/*Tama;o de fuente*/
+		font-size: 15px;
+		/*Grosor de nuestro texto*/
+		font-weight: bold;
+		/*Tama;o del padding*/
+		padding: 0 20px;
+		/*Altura de un bloque de texto*/
+		line-height: 60px;
+		color: white;
+		text-decoration: none;
+	}
+
+	.ul-menu {
+		/* flex-direction: column 
+    coloca los elementos hijos de
+    un contenedor en columnas en lugar de filas*/
+		flex-direction: column;
+		list-style: none;
+		margin-right: 0px;
+		position: fixed;
+		top: 60px;
+		width: 100%;
+		align-items: center;
+		background-color: white;
+
+		/*Este height nos ayudara a tomar todo el 
+    tama;o de la pagina*/
+		height: calc(100% - 60px);
+
+		/*Se a;ade un scroll automaticamente
+    cuando nuestra pagina web, la requiera
+    por el tama;o de la pagina*/
+		overflow-y: auto;
+
+		padding: 20px 0;
+	}
+
+	.item-menu {
+		line-height: 60px;
+	}
+
+	.menu-link {
+		padding: 3px 6px;
+		border-radius: 3px;
+	}
+
+	.nav-link {
+		color: #191970;
+		text-decoration: none;
+		padding: 0.1rem 1rem;
+	}
+
+	.menu-link:hover {
+		background: none;
+		color: rgb(14, 38, 77);
+	}
+	.nav-toggle {
+		display: block;
+		cursor: pointer;
+	}
+
+	.menu-visible {
+		left: 100%;
+		transition: left 0.3s;
+	}
+}

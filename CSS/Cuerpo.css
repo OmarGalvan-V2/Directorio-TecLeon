@@ -1,0 +1,91 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	/*Centra todos los elementos dentro del body*/
+	height: auto;
+	/*Establecemos la altura de los elementos dentro de nuestro body*/
+	background-image: linear-gradient(135deg, #ff4d4d, #5858da, #e4ba4e);
+	background-size: 500%;
+	animation: fanimado 10s infinite;
+}
+
+@keyframes fanimado {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0%, 50%;
+	}
+}
+
+.cristal {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(8.2px);
+	-webkit-backdrop-filter: blur(8.2px);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.cristal .card,
+.cristal .card-header,
+.cristal .card-body {
+	background: none;
+}
+
+.cristal .card-body a {
+	color: cyan;
+}
+
+.letrero {
+	color: #000;
+	position: relative;
+	text-decoration: none;
+}
+
+.letrero::before {
+	background: linear-gradient(45deg, #ff4d4d, #5858da, #e4ba4e);
+	content: "";
+	inset: 0;
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.5s ease-in-out;
+	z-index: -1;
+}
+
+.letrero:hover::before {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+/* Estilo para la tabla */
+table {
+	width: 100%;
+	margin-top: 20px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	background-color: #fff; /* Fondo blanco */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+th,
+td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ddd; /* Borde inferior gris claro en celdas */
+}
+
+th {
+	background-color: #f2f2f2; /* Fondo gris claro para encabezados */
+}
+
+tr:hover {
+	background-color: #f5f5f5; /* Fondo gris claro al pasar el ratón sobre una fila */
+}

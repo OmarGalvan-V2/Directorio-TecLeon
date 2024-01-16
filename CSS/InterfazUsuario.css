@@ -1,0 +1,24 @@
+body{
+    /*Centra todos los elementos dentro del body*/
+    height: auto;
+    /*Establecemos la altura de los elementos dentro de nuestro body*/
+    background-image: linear-gradient(135deg, #8B0000, #191970,
+            #DAA520);
+    background-size: 500%;
+    animation: fanimado 10s infinite;
+    margin: 0;
+    padding: 0;
+
+}
+  
+@keyframes fanimado{
+0%{
+background-position: 0% 50%;
+}
+50%{
+background-position: 100% 50%;
+}
+100%{
+background-position:  0%, 50%;
+}
+}
